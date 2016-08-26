@@ -994,7 +994,9 @@
 
             _.$slideTrack.children(this.options.slide).detach();
 
-            _.$slidesCache.filter(filter).appendTo(_.$slideTrack);
+            _.$slidesCache.filter(filter).each(function(index){
+                $(this).attr('data-slick-index', index);
+            }).appendTo(_.$slideTrack);
 
             _.reinit();
 
